@@ -1,0 +1,4 @@
+DROP DATABASE IF EXISTS contatos;
+CREATE DATABASE contatos;
+
+
