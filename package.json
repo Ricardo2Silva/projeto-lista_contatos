@@ -1,0 +1,23 @@
+{
+  "name": "projeto_lista_contatos",
+  "version": "1.0.0",
+  "description": "projeto lista de contatos",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricardo2Silva/projeto-lista_contatos.git"
+  },
+  "author": "Ricardo Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ricardo2Silva/projeto-lista_contatos/issues"
+  },
+  "homepage": "https://github.com/Ricardo2Silva/projeto-lista_contatos#readme",
+  "dependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
