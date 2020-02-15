@@ -7,6 +7,6 @@ if (req.url='/home'){
 }
 });
 
-servidor.listen(3000)
+servidor.listen(3030)
 
 console.log('servidor rodando na porta 3000');
