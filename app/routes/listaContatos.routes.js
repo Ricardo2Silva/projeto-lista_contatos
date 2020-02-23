@@ -1,18 +1,11 @@
-  
+let factory=require('../repositories/connectionFactory');
+
+
 module.exports = (app) => {
     
-    app.get('/lista',(req,res)=>{
-       
-     let mysql = require('mysql');
-    
-        const dadosConexao = {
-                host: 'localhost',
-                user: 'root',
-                password: 'root',
-                database: 'contatos'
-            }
-
-            let connection = mysql.createConnection(dadosConexao);
+    app.get('/home',(req,res)=>{
+     
+      let connection=factory.getConnection();     
         
             connection.query('select * from contato', (err, resultadoQuery) => {
               
