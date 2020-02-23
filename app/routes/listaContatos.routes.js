@@ -6,15 +6,18 @@ module.exports = (app) => {
     app.get('/home',(req,res)=>{
      
       let connection=factory.getConnection();     
-        
-            connection.query('select * from contato', (err, resultadoQuery) => {
-              
-                if (err) console.log('ocorreu um erro na listagem dos contatos:', err);
+      let contatoRepository = new app.repositories.contatosRepository(connection);
+
+      // fluxo: 4
+        contatoRepository.listarContatos((err, resultadoQuery) => {
+          if (err) console.log('ocorreu um erro na listagem dos contatos:', err);
+
+          res.send(resultadoQuery);
+           
+            
+        });
     
-                res.send(resultadoQuery);
-            });
-    
-            connection.end();    
+        connection.end();    
         
     
     });      
