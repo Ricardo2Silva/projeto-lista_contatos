@@ -19,7 +19,21 @@ module.exports = (app) => {
        
         
     
-    });      
+    }); 
+    
+    
+    app.post('/contatos', (req, res) => {        
+        let corpoRequest = req.body;
+        let contatoRepository = new app.repositories.contatosRepository();
+
+      contatoRepository.inserirContato(corpoRequest, (err) => {
+            if (err) console.log('ocorreu um erro na insercao do contato:', err);
+
+            res.send('contato inserido com sucesso');
+        });
+
+    });
+
 }
 
 

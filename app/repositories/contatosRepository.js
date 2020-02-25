@@ -15,4 +15,20 @@ ContatoRepository.prototype.listarContatos = (callback) => {
     connection.end();
 }
 
+ContatoRepository.prototype.inserirContato = (contato, callback) =>{
+
+    let connection =factory.getConnection();
+    console.log('######',contato);
+    connection.query ('INSERT INTO contato SET ?',contato,callback);
+
+    connection.end();
+
+}
+
+
+
+
+
+
+
 module.exports = () => ContatoRepository;
