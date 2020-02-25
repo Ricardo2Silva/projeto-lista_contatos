@@ -1,15 +1,18 @@
-
-let conn;
+let factory=require('./connectionFactory');
 
 // fluxo: 3
-function ContatoRepository(connection) {
-    conn = connection;
-}
+function ContatoRepository() {};
+
 
 // vamos adicionar as operacao de banco de dados que lidam com contatos
 // fluxo: 5
 ContatoRepository.prototype.listarContatos = (callback) => {
-    conn.query('select * from contato', callback);
+    let connection=factory.getConnection();
+    
+    
+    connection.query('select * from contato', callback);
+
+    connection.end();
 }
 
 module.exports = () => ContatoRepository;

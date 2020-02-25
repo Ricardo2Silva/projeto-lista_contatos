@@ -1,12 +1,11 @@
-let factory=require('../repositories/connectionFactory');
+
 
 
 module.exports = (app) => {
     
     app.get('/home',(req,res)=>{
-     
-      let connection=factory.getConnection();     
-      let contatoRepository = new app.repositories.contatosRepository(connection);
+      
+      let contatoRepository = new app.repositories.contatosRepository();
 
       // fluxo: 4
         contatoRepository.listarContatos((err, resultadoQuery) => {
@@ -17,7 +16,7 @@ module.exports = (app) => {
             
         });
     
-        connection.end();    
+       
         
     
     });      
